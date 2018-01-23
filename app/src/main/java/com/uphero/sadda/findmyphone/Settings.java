@@ -24,10 +24,6 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
         normalMode = findViewById(R.id.normalMode);
         turnAlarm = findViewById(R.id.turnAlarm);
 
