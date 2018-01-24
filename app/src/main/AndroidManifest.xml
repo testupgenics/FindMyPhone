@@ -22,8 +22,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.uphero.sadda.findmyphone.Settings"></activity>
-
         <receiver android:name="com.uphero.sadda.findmyphone.MyBroadcastReceiver">
             <intent-filter android:priority="1000">
                 <action android:name="android.provider.Telephony.SMS_RECEIVED"/>

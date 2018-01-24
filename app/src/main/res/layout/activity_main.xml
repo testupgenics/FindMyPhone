@@ -1,55 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    tools:context="com.uphero.sadda.findmyphone.MainActivity">
+    tools:context="com.uphero.sadda.findmyphone.MainActivity"
+    android:layout_margin="16dp">
 
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/textInputLayoutName"
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/normalMode"
+        android:text="@string/normal_mode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/textInputLayoutPassword">
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/enter_your_name"
-            android:inputType="textCapWords" />
-    </android.support.design.widget.TextInputLayout>
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/textInputLayoutPassword"
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvNormalMode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="5dp"
+        app:cardBackgroundColor="#DCDCDC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/normalMode">
+
+        <TextView
+            android:id="@+id/tvNormalMode"
+            android:text="@string/enable_normal_mode"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/turnAlarm"
+        android:text="@string/play_alarm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvNormalMode"
+        android:layout_marginTop="16dp"/>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvTurnAlarm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="5dp"
+        app:cardBackgroundColor="#DCDCDC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/turnAlarm">
+
+        <TextView
+            android:id="@+id/tvTurnAlarm"
+            android:text="@string/enable_play_alarm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvHowTo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="5dp"
+        app:cardBackgroundColor="#DCDCDC"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/passcode"
+
+        <TextView
+            android:id="@+id/howTo"
+            android:text="@string/how_to_use"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/enter_your_password"
-            android:inputType="numberPassword"
-            android:imeOptions="actionDone"
-            android:maxLength="4"/>
-    </android.support.design.widget.TextInputLayout>
-
-
-    <Button
-        android:id="@+id/register"
-        style="@style/Base.Widget.AppCompat.Button.Colored"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/register"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textInputLayoutPassword"/>
-
+            android:layout_height="match_parent"
+            android:padding="10dp" />
+    </android.support.v7.widget.CardView>
 </android.support.constraint.ConstraintLayout>

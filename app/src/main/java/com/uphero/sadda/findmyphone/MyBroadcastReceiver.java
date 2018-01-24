@@ -17,18 +17,16 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class MyBroadcastReceiver extends BroadcastReceiver {
 
-    SharedPreferences sharedPreferences;
-    String passcode;
+    SharedPreferences preferences;
 
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        sharedPreferences = context.getSharedPreferences("LoginInfo",MODE_PRIVATE);
-        passcode = sharedPreferences.getString("Passcode","0");
-        Boolean normalMode,turnAlarm;
+        preferences = context.getSharedPreferences("FindMyPhonePreferences", MODE_PRIVATE);
+        Boolean normalMode, turnAlarm;
 
-        normalMode = sharedPreferences.getBoolean("NormalMode",false);
-        turnAlarm = sharedPreferences.getBoolean("TurnAlarm",false);
+        normalMode = preferences.getBoolean("NormalMode", false);
+        turnAlarm = preferences.getBoolean("TurnAlarm", false);
 
         final Bundle bundle = intent.getExtras();
 
@@ -38,20 +36,20 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
 
                 final Object[] pdusObj = (Object[]) bundle.get("pdus");
 
-                for (int i = 0; i < pdusObj.length; i++) {
+                for (Object aPdusObj : pdusObj) {
 
-                    SmsMessage currentMessage = SmsMessage.createFromPdu((byte[]) pdusObj[i]);
+                    SmsMessage currentMessage = SmsMessage.createFromPdu((byte[]) aPdusObj);
 
                     String message = currentMessage.getDisplayMessageBody();
 
-                    if (message.equalsIgnoreCase("FindMe:"+passcode)) {
+                    if (message.equalsIgnoreCase("FindMe")) {
 
-                        if (turnAlarm && normalMode){
+                        if (turnAlarm && normalMode) {
 
                             AudioManager audioManager;
                             audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
                             audioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
-                            audioManager.setStreamVolume(AudioManager.STREAM_RING,audioManager.getStreamMaxVolume(AudioManager.STREAM_RING),0);
+                            audioManager.setStreamVolume(AudioManager.STREAM_RING, audioManager.getStreamMaxVolume(AudioManager.STREAM_RING), 0);
 
                             Uri alarm = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
                             final Ringtone r = RingtoneManager.getRingtone(context, alarm);
@@ -60,7 +58,8 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
                             new CountDownTimer(5000, 1000) {
 
                                 @Override
-                                public void onTick(long millisUntilFinished) {}
+                                public void onTick(long millisUntilFinished) {
+                                }
 
                                 public void onFinish() {
                                     r.stop();
@@ -68,9 +67,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
 
                             }.start();
 
-                        }
-
-                        else if (turnAlarm) {
+                        } else if (turnAlarm) {
 
                             Uri alarm = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
                             final Ringtone r = RingtoneManager.getRingtone(context, alarm);
@@ -80,7 +77,8 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
                             new CountDownTimer(5000, 1000) {
 
                                 @Override
-                                public void onTick(long millisUntilFinished) {}
+                                public void onTick(long millisUntilFinished) {
+                                }
 
                                 public void onFinish() {
                                     r.stop();
@@ -88,15 +86,13 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
 
                             }.start();
 
-                        }
-
-                        else if (normalMode) {
+                        } else if (normalMode) {
 
                             AudioManager audioManager;
                             audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
                             audioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
                             audioManager.getStreamMaxVolume(AudioManager.STREAM_RING);
-                            audioManager.setStreamVolume(AudioManager.STREAM_RING,audioManager.getStreamMaxVolume(AudioManager.STREAM_RING),0);
+                            audioManager.setStreamVolume(AudioManager.STREAM_RING, audioManager.getStreamMaxVolume(AudioManager.STREAM_RING), 0);
 
                         }
                     }
@@ -104,7 +100,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
             }
 
         } catch (Exception e) {
-            Log.e("SmsReceiver", "Exception smsReceiver" +e);
+            Log.e("SmsReceiver", "Exception smsReceiver" + e);
 
         }
     }

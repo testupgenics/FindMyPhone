@@ -1,13 +1,11 @@
 <resources>
     <string name="app_name">Find My Phone</string>
-    <string name="how_to_use">
-       <b>How To Use</b>\n\nWrite findme:password in SMS. In my case, password is 1234. So, I will write findme:1234, then send it to your phone number.
-\n\nIf you enable normal mode, then your phone will switch from silent to normal mode.
-\n\nIf you enable play alarm, then your phone will start ringing.
-</string>
+    <string name="how_to_use"><b>HOW TO USE</b>\n\nWrite findme in SMS and send it to your phone number</string>
     <string name="normal_mode">Normal Mode</string>
     <string name="play_alarm">Play Alarm</string>
     <string name="enter_your_name">Enter Your Name</string>
     <string name="enter_your_password">Enter Your Password</string>
     <string name="register">Register</string>
+    <string name="enable_normal_mode">If you enable normal mode, then your phone will switch from silent to normal mode.</string>
+    <string name="enable_play_alarm">If you enable play alarm, then your phone will start ringing</string>
 </resources>
