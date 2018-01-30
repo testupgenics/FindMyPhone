@@ -1,4 +1,4 @@
-package com.uphero.sadda.findmyphone
+package pk.encodersolutions.findmyphone
 
 import android.content.BroadcastReceiver
 import android.content.Context

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.uphero.sadda.findmyphone.MainActivity"
+    tools:context="pk.encodersolutions.findmyphone.MainActivity"
     android:layout_margin="16dp">
 
     <android.support.v7.widget.SwitchCompat
@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        app:cardCornerRadius="5dp"
+        app:cardCornerRadius="1dp"
         app:cardBackgroundColor="#DCDCDC"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/normalMode">
@@ -50,7 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        app:cardCornerRadius="5dp"
+        app:cardCornerRadius="1dp"
         app:cardBackgroundColor="#DCDCDC"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/turnAlarm">
@@ -68,7 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        app:cardCornerRadius="5dp"
+        app:cardCornerRadius="1dp"
         app:cardBackgroundColor="#DCDCDC"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">

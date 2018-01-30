@@ -1,4 +1,4 @@
-package com.uphero.sadda.findmyphone
+package pk.encodersolutions.findmyphone
 
 import android.Manifest
 import android.content.Context
@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.SwitchCompat
 import android.widget.Toast
+import pk.encodersolutions.findmyphone.findmyphone.R
 
 
 class MainActivity : AppCompatActivity() {

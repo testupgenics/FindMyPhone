@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.uphero.sadda.findmyphone">
+    package="pk.encodersolutions.findmyphone">
 
     <uses-permission android:name="android.permission.READ_SMS"/>
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name="android.support.multidex.MultiDexApplication">
-        <activity android:name="com.uphero.sadda.findmyphone.MainActivity"
+        <activity android:name="pk.encodersolutions.findmyphone.MainActivity"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name="com.uphero.sadda.findmyphone.MyBroadcastReceiver">
+        <receiver android:name="pk.encodersolutions.findmyphone.MyBroadcastReceiver">
             <intent-filter android:priority="1000">
                 <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
             </intent-filter>
