@@ -8,7 +8,10 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.SwitchCompat
 import android.widget.Toast
-import pk.encodersolutions.findmyphone.findmyphone.R
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.InterstitialAd
+import com.google.android.gms.ads.MobileAds
 
 
 class MainActivity : AppCompatActivity() {
@@ -17,15 +20,26 @@ class MainActivity : AppCompatActivity() {
     private lateinit var editor: SharedPreferences.Editor
     private lateinit var switchNormalMode: SwitchCompat
     private lateinit var switchTurnAlarm: SwitchCompat
+    private lateinit var mInterstitialAd : InterstitialAd
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initAds()
         initViews()
         requestPermissions()
         registerListeners()
+    }
 
+    private fun initAds() {
+        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713")
+        mInterstitialAd = InterstitialAd(this)
+        mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd.loadAd(AdRequest.Builder().build())
+        val mAdView: AdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
     }
 
     private fun initViews() {
@@ -78,5 +92,16 @@ class MainActivity : AppCompatActivity() {
             }
             editor.commit()
         }
+    }
+
+    private fun showInterstitialAd(){
+        if (mInterstitialAd.isLoaded) {
+            mInterstitialAd.show()
+        }
+    }
+
+    override fun onBackPressed() {
+        showInterstitialAd()
+        super.onBackPressed()
     }
 }

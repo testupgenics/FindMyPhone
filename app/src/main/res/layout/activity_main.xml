@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pk.encodersolutions.findmyphone.MainActivity"
-    android:layout_margin="16dp">
+    tools:context="pk.encodersolutions.findmyphone.MainActivity">
 
     <android.support.v7.widget.SwitchCompat
         android:id="@+id/normalMode"
@@ -15,15 +14,17 @@
         android:layout_height="wrap_content"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="16dp"
+        android:layout_margin="16dp"/>
 
     <android.support.v7.widget.CardView
         android:id="@+id/cvNormalMode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_margin="16dp"
         app:cardCornerRadius="1dp"
-        app:cardBackgroundColor="#DCDCDC"
+        app:cardBackgroundColor="#EEEEEE"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/normalMode">
 
@@ -32,7 +33,7 @@
             android:text="@string/enable_normal_mode"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp" />
+            android:padding="16dp" />
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.SwitchCompat
@@ -43,15 +44,16 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cvNormalMode"
-        android:layout_marginTop="16dp"/>
+        android:padding="16dp"
+        android:layout_margin="16dp"/>
 
     <android.support.v7.widget.CardView
         android:id="@+id/cvTurnAlarm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_margin="16dp"
         app:cardCornerRadius="1dp"
-        app:cardBackgroundColor="#DCDCDC"
+        app:cardBackgroundColor="#EEEEEE"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/turnAlarm">
 
@@ -60,24 +62,36 @@
             android:text="@string/enable_play_alarm"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp" />
+            android:padding="16dp" />
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
         android:id="@+id/cvHowTo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_margin="16dp"
         app:cardCornerRadius="1dp"
-        app:cardBackgroundColor="#DCDCDC"
+        app:cardBackgroundColor="#EEEEEE"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toTopOf="@id/adView">
 
         <TextView
             android:id="@+id/howTo"
             android:text="@string/how_to_use"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp" />
+            android:padding="16dp" />
     </android.support.v7.widget.CardView>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintLeft_toLeftOf="parent"
+        ads:layout_constraintRight_toRightOf="parent"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+    </com.google.android.gms.ads.AdView>
 </android.support.constraint.ConstraintLayout>

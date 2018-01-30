@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Find My Phone</string>
-    <string name="how_to_use"><b>HOW TO USE</b>\n\nWrite findme in SMS and send it to your phone number</string>
+    <string name="how_to_use"><b>HOW TO USE</b>\nWrite findme in SMS and send it to your phone number</string>
     <string name="normal_mode">Normal Mode</string>
     <string name="play_alarm">Play Alarm</string>
     <string name="enter_your_name">Enter Your Name</string>
@@ -8,4 +8,8 @@
     <string name="register">Register</string>
     <string name="enable_normal_mode">If you enable normal mode, then your phone will switch from silent to normal mode.</string>
     <string name="enable_play_alarm">If you enable play alarm, then your phone will start ringing</string>
+
+    <string name="APP_ID">ca-app-pub-6728394946634137~6666637867</string>
+    <string name="BANNER_ID">ca-app-pub-6728394946634137/3765142354</string>
+    <string name="INTERSTITIAL_ID">ca-app-pub-6728394946634137/5597098770</string>
 </resources>
