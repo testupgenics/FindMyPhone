@@ -50,7 +50,7 @@ class MyBroadcastReceiver : BroadcastReceiver() {
                             val r = RingtoneManager.getRingtone(context, alarm)
                             r.play()
 
-                            object : CountDownTimer(5000, 1000) {
+                            object : CountDownTimer(60000, 1000) {
 
                                 override fun onTick(millisUntilFinished: Long) {}
 
