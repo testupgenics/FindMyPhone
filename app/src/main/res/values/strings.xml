@@ -8,8 +8,4 @@
     <string name="register">Register</string>
     <string name="enable_normal_mode">If you enable normal mode, then your phone will switch from silent to normal mode.</string>
     <string name="enable_play_alarm">If you enable play alarm, then your phone will start ringing</string>
-
-    <string name="APP_ID">ca-app-pub-6728394946634137~6666637867</string>
-    <string name="BANNER_ID">ca-app-pub-6728394946634137/3765142354</string>
-    <string name="INTERSTITIAL_ID">ca-app-pub-6728394946634137/5597098770</string>
 </resources>
